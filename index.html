@@ -8,32 +8,33 @@
     <title>Quiz Module</title>
 </head>
 <body>
-    <div class="container-fluid bg-dark text-center text-white display-3 pb-3 font-weight-bold">Quiz</div>
+    <div class="container-fluid bg-dark">
+        <div class="row">
+        <div class="col text-center"><h1 id="score" class="text-white display-4 font-weight-bold pb-2">Quiz</h1>
+        </div>
+        </div>
+    </div>
     <div class="container-fluid bg-light heigth-full">
-        <div class="row pt-5">   
+        <div class="row">   
                 <div class="container mt">
+                    <h2 id="aKey">Answer Key</h2>
                     <div class="card">
-                    <div class="card-body">
-                    <h2 class="card-title"></h2>
-                        <form> 
-                    <div class="radio">
-                    <label><input type="radio" name="answer"> </label>
-                    </div>
-                    <div class="radio">
-                    <label><input type="radio" name="answer"> </label>
-                    </div>
-                    <div class="radio">
-                    <label><input type="radio" name="answer"> </label>
-                    </div>
-                    <div class="radio">
-                    <label><input type="radio" name="answer"> </label>
-                    </div>
-                    <div class="pt-4"><button class="btn btn-warning">Submit</button></div>
+                    <div id="quiz" class="card-body">
+                        <h2 class="card-title" id="title"></h2>
+                        <form id="form"> 
+                            <div id="choices"></div>
+                            <div id="correct" class="alert alert-success col-sm-3 text-center" style="width: 100px" ><strong>Correct</strong></div>
+                            <div id="incorrect" class="alert alert-danger text-center col-6" style="width: 160px;"><strong>Incorrect</strong></div>
+                            <div id="button" class="pt-4"><button type="button" class="btn btn-warning" onclick="check()">Submit</button></div>
+                           <div id="button2" class="pt-4"><button type="button" class="btn btn-success" onclick="nextQuiz()">Next</button></div>
                         </form>
                     </div>
                     </div>
+                    <div id="button3" class="pt-2"><button type="button" class="btn btn-info" onclick="restart()">Restart</button></div>
                 </div>
         </div>
     </div>
+<!-- index.js -->
+<script src="index.js"></script>
 </body>
 </html>
