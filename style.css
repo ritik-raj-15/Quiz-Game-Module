@@ -1,11 +1,71 @@
 .heigth-full
 {
-    height: 86vh; /*Viewport Height*/
+    height: 85vh; /*Viewport Height*/
 }
 .mt
 {
-    margin-top: 100px;
+    margin-top: 80px;
 }
 li{
     padding: 8px;
 }
+
+.combo{
+    height:30px;
+   position: relative;
+}
+.box{
+height:100%;
+width:100%;
+position:absolute;
+left: 0;
+}
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color:goldenrod
+  }
+  
+  .welcome_text {
+    width: 500px;
+  }
+
+  .welcome_form input,
+  .welcome_form button {
+    display: block;
+    width: 100%;
+  }
+  
+  .welcome_form input {
+    background-color: transparent;
+    color:white;
+    font-size: 30px;
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 15px;
+  }
+  
+  .welcome_form input:focus {
+    outline: none;
+  }
+  
+  .welcome_form button {
+    padding: 20px 0;
+    border: none;
+    border-radius: 100px;
+    background-color: #fff;
+    color: #341f97;
+    font-size: 22px;
+    transition: 0.4s all;
+  }
+  
+  .welcome_form button:hover {
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    cursor: pointer;
+  }

@@ -102,9 +102,19 @@ var questions=[{
  correct:"isNaN(val)"
 }
 ];
+
+function submitForm(event)
+{
+   event.preventDefault();
+    var name = document.forms["welcome_form"]["name"].value;
+  //  console.log(name);
+  sessionStorage.setItem("name",name);
+  location.href="index.html";
+}
+
 var score=0;
+document.getElementById("userid").innerHTML="Hello "+sessionStorage.getItem("name")+"!";
 var quiz= document.getElementById('quiz');//parent class
-var form = document.getElementById("form");//maintaning the alignment
 var divCorrect=document.getElementById("correct");
 var divIncorrect=document.getElementById("incorrect");
 divCorrect.setAttribute("hidden","true");
@@ -121,12 +131,14 @@ function show(value)
    if(value<10)
    {
   var title=document.getElementById("title");//question title
-  title.innerHTML=questions[qNumber].ques;//inserting the content
+  title.innerHTML="Q"+(qNumber+1)+" "+questions[qNumber].ques;//inserting the content
 
     var output="";
+    var i=0;
     var choices=document.getElementById("choices");
     questions[value].ops.forEach((element)=>{
-           output+=`<div class="radio"><label><input type="radio" name="answer" value="${element}"> ${element}</label></div>`; 
+           output+=`<div class="radio"><label><input type="radio" name="answer" id="a${i}" value="${element}"> ${element}</label></div>`;
+           i=i+1;
     });
    choices.innerHTML=output;
    console.log(value);
@@ -137,11 +149,14 @@ function show(value)
       document.getElementById("aKey").removeAttribute("style");
       var finalOutput="<ul>";
       questions.forEach((item)=>{
-            finalOutput+=`<li> ${item.ques} - <span class="badge badge-success text-white" >${item.correct}</span></li>`
+            finalOutput+=`<li> ${item.ques} - <span class="badge badge-success text-white" >${item.correct}</span></li>`;
       });
       finalOutput+="</ul>"
       quiz.innerHTML=finalOutput;
       reButton.removeAttribute("style");
+      clearInterval(x);
+      document.getElementById("print").innerHTML=`Time Taken :- ${modifiedMin} : ${modifiedSec} `;
+      document.getElementById("myBar").style.width="100%";
    }
 }
 
@@ -165,6 +180,10 @@ function check()
                toggleNext();
                console.log(checkAns.value+" wrong ans");
             }
+           for(var i=0;i<4;i++)
+           {
+              document.getElementById("a"+i).disabled = true; 
+           }
     }
     else{
         alert("Please select an option");
@@ -208,3 +227,4 @@ function restart()
    qNumber=0;
    location.reload();
 }
+

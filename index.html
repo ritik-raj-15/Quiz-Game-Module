@@ -10,7 +10,10 @@
 <body>
     <div class="container-fluid bg-dark">
         <div class="row">
-        <div class="col text-center"><h1 id="score" class="text-white display-4 font-weight-bold pb-2">Quiz</h1>
+        <div class="col-12 text-center"><h1 id="score" class="text-white display-4 font-weight-bold">Quiz</h1><span id="userid" class="text-white"></span></div>
+        <div class="col-12 combo">
+            <div id="myBar" class="box bg-success"></div>
+            <div class="box" style="text-align:center;"><h4 id="print">0:00</h4></div>
         </div>
         </div>
     </div>
@@ -26,7 +29,7 @@
                             <div id="correct" class="alert alert-success col-sm-3 text-center" style="width: 100px" ><strong>Correct</strong></div>
                             <div id="incorrect" class="alert alert-danger text-center col-6" style="width: 160px;"><strong>Incorrect</strong></div>
                             <div id="button" class="pt-4"><button type="button" class="btn btn-warning" onclick="check()">Submit</button></div>
-                           <div id="button2" class="pt-4"><button type="button" class="btn btn-success" onclick="nextQuiz()">Next</button></div>
+                           <div id="button2"><button type="button" class="btn btn-success" onclick="nextQuiz()">Next</button></div>
                         </form>
                     </div>
                     </div>
@@ -36,5 +39,6 @@
     </div>
 <!-- index.js -->
 <script src="index.js"></script>
+<script src="timer.js"></script>
 </body>
 </html>
